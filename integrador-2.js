@@ -1,8 +1,10 @@
+let id =""
+
 let listaUsuarios = [
-    ["Carla", 1545628984, "carla@gmail.com", 0],
-    ["Pedro", 1545251245, "pedro@gmail.com", 1],
-    ["Lucas", 1523357849, "lucas@gmail.com", 2],
-    ["Ana", 15789456, "ana@gmail.com", 3],
+    ["Carla", 1545628984, "carla@gmail.com", id + 0],
+    ["Pedro", 1545251245, "pedro@gmail.com", id + 1],
+    ["Lucas", 1523357849,  "lucas@gmail.com",id + 2],
+    ["Ana", 15789456, "ana@gmail.com", id + 3],
 ]
 
 
@@ -15,7 +17,7 @@ accion = prompt(`Elegí una acción:
 [LISTAR] un usuario 📑
 [MODIFICAR] un usuario ✏️
 [ELIMINAR] un usuario ✂️
-[SALIR] ❌`)
+[SALIR] 🏃‍`)
 
 if(accion === "CREAR"){
 let confirmacion = ""
@@ -30,12 +32,12 @@ Nombre: ${nombreUsuario}
 Teléfono: ${telefonoUsuario}
 Mail: ${mailUsuario}
 Desea confirmarlos?
-SI / NO`)
+✔️SI / ❌NO`)
     if(confirmacion === "SI"){
         listaUsuarios.push(datosIngresados)
         alert("Tu usuario fue agregado con éxito")
         confirmacion2 = prompt(`Desea volver a realizar el procedimiento? 
-        SI / NO`)        
+        ✔️SI / ❌NO`)        
     }
     else{
         alert("Operación cancelada");
@@ -45,7 +47,7 @@ SI / NO`)
 
 
 if(accion === "SALIR"){
-    let respuestaSalida = prompt("¿Está seguro que desea salir del programa? SI/NO")
+    let respuestaSalida = prompt("¿Está seguro que desea salir del programa? ✔️SI/❌NO")
     if(respuestaSalida ==="SI"){
     alert("Gracias por nada")
     }
@@ -88,6 +90,37 @@ if(accion === "LISTAR"){
 }
 if(accion ==="MODIFICAR"){
 let idUsuario = prompt("Por favor ingrese el ID del usuario a modificar:")
+
+}
+if(accion === "ELIMINAR"){
+let respuestaEliminacion =""
+let respuestaEliminacion2 = ""
+for(i=0; respuestaEliminacion != "NO" && respuestaEliminacion2 != "NO"; i++){
+ let usuarioAEliminar = prompt("Por favor ingrese el ID del usuario que quiere eliminar")
+
+ for (let i = 0; i < listaUsuarios.length; i++) {
+    for (let j = 0; j < listaUsuarios[i].length; j++) {
+
+        if (listaUsuarios[i][j] === usuarioAEliminar) {
+            respuestaEliminacion = prompt("Estos son los datos del usuario que Ud. desea borrar:" + listaUsuarios[usuarioAEliminar] + "¿Desea confirmar? ✔️SI/❌NO")
+           if(respuestaEliminacion === "SI") {
+            listaUsuarios.splice(i, 1);
+            alert("La operación fue realizada éxitosamente") 
+                        respuestaEliminacion2 = prompt(`Desea volver a realizar el procedimiento? 
+            ✔️SI / ❌NO`)
+            break;
+
+           }
+           else {
+            alert("Operación cancelada");
+        }
+        
+        }
+            
+          }
+    }
+
+ }
 }
 }
 
