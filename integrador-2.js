@@ -8,14 +8,15 @@ let listaUsuarios = [
 
 let accion = ""
 
-for(i = 0; accion != "SALIR"; i++){
+for(i = 0; accion !== "SALIR"; i++){
 accion = prompt(`Elegí una acción:
-CREAR 
-BUSCAR 
-LISTAR 
-MODIFICAR 
-ELIMINAR
-SALIR`)
+[CREAR] un usuario 👤
+[BUSCAR] un usuario 🔎
+[LISTAR] un usuario 📑
+[MODIFICAR] un usuario ✏️
+[ELIMINAR] un usuario ✂️
+[SALIR] ❌`)
+
 if(accion === "CREAR"){
 let confirmacion = ""
 let confirmacion2 = ""
@@ -32,39 +33,62 @@ Desea confirmarlos?
 SI / NO`)
     if(confirmacion === "SI"){
         listaUsuarios.push(datosIngresados)
-        alert("Tu usuario fue agregado con Éxito")
+        alert("Tu usuario fue agregado con éxito")
         confirmacion2 = prompt(`Desea volver a realizar el procedimiento? 
-        SI / NO`)
-        
+        SI / NO`)        
     }
     else{
         alert("Operación cancelada");
     }
 }
 }
-if(accion === "SALIR"){
-    alert("Gracias por nada")
 
+
+if(accion === "SALIR"){
+    let respuestaSalida = prompt("¿Está seguro que desea salir del programa? SI/NO")
+    if(respuestaSalida ==="SI"){
+    alert("Gracias por nada")
+    }
+
+    
 }
 if(accion === "BUSCAR"){
-    prompt(`Por qué dato desea buscar?
-    ID
-    NOMBRE
-    CELULAR
-    MAIL`) 
-    let respuestaDato = prompt("Ingresalo")
+    let datoABuscar = prompt(`Por qué dato desea buscar?
+    🆔ID
+    👤 NOMBRE
+    📱 CELULAR
+    📧 MAIL`) 
+    let respuestaDato = prompt("Ingresa el " + datoABuscar)
 
     for (let i = 0; i < listaUsuarios.length; i++) {
         for (let j = 0; j < listaUsuarios[i].length; j++) {
           
-          if (listaUsuarios === respuestaDato) {
-            alert("hola")
+          if (listaUsuarios[i][j] === respuestaDato) {
+            alert("Los datos del usuario son:"+ 
+           "🆔 ID:" + 
+    
+           "👤 Nombre: " +
+
+            "📱 Celular:" +
+
+           "📧 Mail:" 
+            
+            
+            )
             
           }
+
         }
+         
      }
+        
+}
+if(accion === "LISTAR"){
+    alert(listaUsuarios)
+}
+if(accion ==="MODIFICAR"){
+let idUsuario = prompt("Por favor ingrese el ID del usuario a modificar:")
 }
 }
 
 console.log(listaUsuarios)
-
