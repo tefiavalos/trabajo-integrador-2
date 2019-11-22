@@ -88,10 +88,38 @@ if(accion === "BUSCAR"){
 if(accion === "LISTAR"){
     alert(listaUsuarios)
 }
-if(accion ==="MODIFICAR"){
-let idUsuario = prompt("Por favor ingrese el ID del usuario a modificar:")
 
+if(accion ==="MODIFICAR"){ //CHICAS, EL CODIGO DEBERIA SER ALGO ASI PERO NO FUNCIONA EL IF QUE PIDE LOS DATOS, Y CREO QUE ENTRÓ EN LOOP
+let idUsuario = prompt("Por favor ingrese el ID del usuario a modificar:")
+for (let i = 0; i < listaUsuarios.length; i++) {
+    for (let j = 0; j < listaUsuarios[i].length; j++) {
+        let nombreModificar = ""
+        let telefonoModificar = ""
+        let mailModificar = ""
+        if(idUsuario === listaUsuarios[i][j]){
+        nombreModificar = prompt("Decinos tu nombre")
+        telefonoModificar = prompt("Decinos tu telefono")
+        mailModificar = prompt("Decinos tu mail")
+        }
+        let datosIngresadosModificar = [nombreModificar, telefonoModificar, mailModificar]
+        let confirmacionModificar = prompt(`Los datos ingresados son los siguientes:
+            Nombre: ${nombreModificar}
+            Teléfono: ${telefonoModificar}
+            Mail: ${mailModificar}
+            Desea confirmarlos?
+            ✔️SI / ❌NO`)
+                if(confirmacionModificar === "SI"){
+            listaUsuarios.splice() //Acá no se bien que poner para guardar los datos nuevos y borrar los anteriores.
+            alert("Tu usuario fue agregado con éxito")
+            let confirmacionModificar2 = prompt(`Desea volver a realizar el procedimiento? 
+            ✔️SI / ❌NO`)}
+                else{
+            alert("Operación cancelada");
+        }
 }
+}
+}
+
 if(accion === "ELIMINAR"){
 let respuestaEliminacion =""
 let respuestaEliminacion2 = ""
