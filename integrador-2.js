@@ -12,12 +12,14 @@ let accion = ""
 
 for (i = 0; accion !== "SALIR"; i++) {
     accion = prompt(`Elegí una acción:
-[CREAR] un usuario 👤
-[BUSCAR] un usuario 🔎
-[LISTAR] un usuario 📑
-[MODIFICAR] un usuario ✏️
-[ELIMINAR] un usuario ✂️
-[SALIR] 🏃‍`)
+    [CREAR] un usuario 👤
+    [BUSCAR] un usuario 🔎
+    [LISTAR] un usuario 📑
+    [MODIFICAR] un usuario ✏️
+    [ELIMINAR] un usuario ✂️
+    [SALIR] 🏃‍`)
+
+    accion = accion.toUpperCase()
 
     if (accion === "CREAR") {
         let confirmacion = ""
@@ -28,17 +30,20 @@ for (i = 0; accion !== "SALIR"; i++) {
             let mailUsuario = prompt("Cuál es tu mail?")
             let datosIngresados = [nombreUsuario, telefonoUsuario, mailUsuario, listaUsuarios.length]
             confirmacion = prompt(`Los datos ingresados son los siguientes:
-Nombre: ${nombreUsuario}
-Teléfono: ${telefonoUsuario}
-Mail: ${mailUsuario}
-Desea confirmarlos?
-✔️SI / ❌NO`)
+           Nombre: ${nombreUsuario}
+           Teléfono: ${telefonoUsuario}
+           Mail: ${mailUsuario}
+           Desea confirmarlos?
+           ✔️SI / ❌NO`)
+           confirmacion = confirmacion.toUpperCase()
             if (confirmacion === "SI") {
                 listaUsuarios.push(datosIngresados)
                 alert("Tu usuario fue agregado con éxito")
                 confirmacion2 = prompt(`Desea volver a realizar el procedimiento? 
-        ✔️SI / ❌NO`)
+                ✔️SI / ❌NO`)
+                confirmacion2 = confirmacion2.toUpperCase()
             }
+            
             else {
                 alert("Operación cancelada");
             }
@@ -48,18 +53,23 @@ Desea confirmarlos?
 
     if (accion === "SALIR") {
         let respuestaSalida = prompt("¿Está seguro que desea salir del programa? ✔️SI/❌NO")
+        respuestaSalida = respuestaSalida.toUpperCase()
         if (respuestaSalida === "SI") {
             alert("Gracias por nada")
+        }
+        else {
+            accion = ""
         }
 
 
     }
     if (accion === "BUSCAR") {
         let datoABuscar = prompt(`Por qué dato desea buscar?
-    🆔ID
-    👤 NOMBRE
-    📱 CELULAR
-    📧 MAIL`)
+        🆔ID
+        👤 NOMBRE
+        📱 CELULAR
+        📧 MAIL`)
+        
         let respuestaDato = prompt("Ingresa el " + datoABuscar)
 
         for (let i = 0; i < listaUsuarios.length; i++) {
@@ -86,10 +96,22 @@ Desea confirmarlos?
 
     }
     if (accion === "LISTAR") {
-        alert(listaUsuarios)
+        let lista = ""
+
+        for (let i = 0; i < listaUsuarios.length; i++) {
+
+            lista = lista + `
+            🆔 ID: ${listaUsuarios[i][3]}
+            👤 Nombre:  ${listaUsuarios[i][0]}
+            ----------------------------------
+            ` 
+        }
+        alert(`Lista de usuarios: 
+        ${lista}`)
+
     }
 
-    if (accion === "MODIFICAR") { 
+    if (accion === "MODIFICAR") {
         let confirmacionModificar = ""
         let confirmacionModificar2 = ""
 
@@ -109,18 +131,20 @@ Desea confirmarlos?
 
                         let datosIngresadosModificar = [nombreModificar, telefonoModificar, mailModificar, listaUsuarios.length]
                         confirmacionModificar = prompt(`Los datos ingresados son los siguientes:
-                    Nombre: ${nombreModificar}
-                    Teléfono: ${telefonoModificar}
-                    Mail: ${mailModificar}
-                    Desea confirmarlos?
-                   ✔️SI / ❌NO`)
+                        Nombre: ${nombreModificar}
+                        Teléfono: ${telefonoModificar}
+                        Mail: ${mailModificar}
+                        Desea confirmarlos?
+                        ✔️SI / ❌NO`)
+                        confirmacionModificar = confirmacionModificar.toUpperCase()
 
 
                         if (confirmacionModificar === "SI") {
                             listaUsuarios[idUsuario] = datosIngresadosModificar
                             alert("Tu usuario fue agregado con éxito")
                             confirmacionModificar2 = prompt(`Desea volver a realizar el procedimiento? 
-                    ✔️SI / ❌NO`)
+                            ✔️SI / ❌NO`)
+                            confirmacionModificar2 = confirmacionModificar2.toUpperCase()
                         }
 
 
@@ -144,11 +168,13 @@ Desea confirmarlos?
 
                     if (listaUsuarios[i][j] == idUsuario) {
                         respuestaEliminacion = prompt("Estos son los datos del usuario que Ud. desea borrar:" + listaUsuarios[idUsuario] + "¿Desea confirmar? ✔️SI/❌NO")
+                        respuestaEliminacion = respuestaEliminacion.toUpperCase()
                         if (respuestaEliminacion === "SI") {
                             listaUsuarios.splice(i, 1);
                             alert("La operación fue realizada éxitosamente")
                             respuestaEliminacion2 = prompt(`Desea volver a realizar el procedimiento? 
-            ✔️SI / ❌NO`)
+                            ✔️SI / ❌NO`)
+                            respuestaEliminacion2 = respuestaEliminacion2.toUpperCase()
                             break;
 
                         }
