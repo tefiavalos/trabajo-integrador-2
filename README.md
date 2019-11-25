@@ -1,9 +1,5 @@
 # Trabajo integrador de JavaScript
 
-<<<<<<< HEAD
-* Participantes: Tefi Avalos, Sabri, Marian y Nil>
-=======
-< Participantes: Tefi Avalos, Sabri, Marian y Nil>
->>>>>>> origin/pruebaNil
+* Participantes: tefiavalos, SabrinaRey, maarcf y nildemarco
 
-* **GitHubePage:** [Link] ()
+* **GitHubePage:** https://tefiavalos.github.io/trabajo-integrador-2/index.html
