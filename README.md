@@ -2,4 +2,4 @@
 
 * Participantes: tefiavalos, SabrinaRey, maarcf y nildemarco
 
-* **GitHubePage:** https://tefiavalos.github.io/trabajo-integrador-2/index.html
+* **GitHubPage:** https://tefiavalos.github.io/trabajo-integrador-2/index.html
