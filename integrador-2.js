@@ -1,3 +1,12 @@
+// Excelente trabajo, chicas!
+// Me da pena tener tan poquito para comentarles, pero es lo que ocurre
+// cuando hacen un gran trabajo. Solo puedo felicitarlas.
+// Buen uso de variables, desmuestran haber comprendido y poder utilizar todos los 
+// conceptos vistos hasta ahora, el codigo es muy prolijo y claro. 
+// Sigan asi!
+
+
+
 const LISTA_USUARIOS = [
     ["Carla", 1545628984, "carla@gmail.com", 0],
     ["Pedro", 1545251245, "pedro@gmail.com", 1],
